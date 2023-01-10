@@ -17,15 +17,10 @@
         }" @click="btnActive = 2">Release Date</span>
       </div>
     </div>
-    <div class="grid grid-cols-5 gap-3 p-6 mx-16">
-      <comp-card />
-      <comp-card />
-      <comp-card />
-      <comp-card />
-      <comp-card />
-      <comp-card />
-      <comp-card />
-      <comp-card />
+    <div v-if="list.length !== 0" class="grid grid-cols-5 gap-3 p-6 mx-16">
+      <div v-for="(data, idx) in list" :key="idx">
+        <comp-card :image="data?.primaryImage?.url" :year="data?.releaseDate?.year" :title="data?.titleText?.text" :type="data?.titleType?.text" :id="data?.id" />
+      </div>
     </div>
   </div>
 
@@ -39,16 +34,16 @@ export default {
   components: {
     'comp-card': Card
   },
-  mounted() {
-
+  props: {
+    list: {
+      type: Array,
+      default: () => ([])
+    }
   },
   data() {
     return {
       btnActive: 1
     }
   },
-  methods: {
-
-  }
 }
 </script>

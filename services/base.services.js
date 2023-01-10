@@ -1,4 +1,4 @@
-const BASE_URL = 'https://moviesdatabase.p.rapidapi.com/'
+const BASE_URL = 'https://moviesdatabase.p.rapidapi.com'
 const KEY = 'f5515d7ccbmsh80e73fc9840cb41p1d7850jsn64668639aa59';
 const HOST = 'moviesdatabase.p.rapidapi.com';
 

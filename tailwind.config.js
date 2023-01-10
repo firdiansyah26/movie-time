@@ -41,6 +41,7 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       white: 'white',
+      black: '#000000',
       primary: '#15191e',
       base: '#292e35',
       dialog: '#0f1824',
@@ -137,6 +138,7 @@ module.exports = {
         900: '#7D1511',
       },
       'orange-inter': {
+        0: '#FF0000',
         50: '#FFF6EC',
         100: '#FFECD3',
         200: '#FFD5A5',

@@ -1,4 +1,4 @@
-import { createServiceInstance } from '@/services/base.service';
+import { createServiceInstance } from '@/services/base.services';
 import config from '@/config';
 
 /**
@@ -10,8 +10,11 @@ export default (context) => {
     baseURL: config.endpoints.titles,
   });
   return {
-    async getList(){
-      return homeInstance.$get('/upcoming');
+    async getMovies(params){
+      return homeInstance.$get('', { params });
+    },
+    async getDetailMovies(id){
+      return homeInstance.$get(`/${id}`);
     }
   }
 };

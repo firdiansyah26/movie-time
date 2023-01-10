@@ -35,12 +35,12 @@ export default {
 
   // Auth module configuration: https://auth.nuxtjs.org/
   auth: {
-    plugins: ['@/plugins/service-injector'],
+    plugins: ['@/addons/service-injector'],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/axios',
+    '@nuxtjs/axios', '@nuxtjs/auth-next'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

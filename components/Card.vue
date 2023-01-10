@@ -7,17 +7,20 @@
           <img alt="rating" src="@/assets/icons/ic-rating.svg" width="32" height="32" />
           <span class="font-semibold text-2xl">7.2</span>
         </div>
-        <span class="font-semibold text-lg">Action</span>
-        <span class="cursor-pointer rounded-full font-semibold px-5 py-1 bg-[#E74C3C]">View</span>
+        <span class="font-semibold text-lg">{{ type }}</span>
+        <span class="cursor-pointer rounded-full font-semibold px-5 py-1 bg-[#E74C3C]">
+          <nuxt-link :to="`/detail?id=${id}`">
+            View
+          </nuxt-link>
+        </span>
       </div>
-      <img alt="img" width="400" height="330"
-        src="https://m.media-amazon.com/images/M/MV5BMWY3YWY1OTktNjc3Ni00NThiLWI0ODYtOTNjM2E4YjQ2MmJkXkEyXkFqcGdeQXVyMjcyMzI2OTQ@._V1_.jpg" />
+      <img alt="img" width="400" class="object-fill h-[346px]" :src="image" />
       <span v-if="hover.id === 0"
         class="absolute right-0 top-0 w-12 h-8 bg-base bg-opacity-50 text-custom-white font-semibold text-center">7.8</span>
     </div>
 
-    <span class="font-semibold text-base text-white">Wonder Woman 1984</span>
-    <span class="font-normal text-secondary text-sm">2020</span>
+    <span class="font-semibold text-base text-white">{{ title }}</span>
+    <span class="font-normal text-secondary text-sm">{{ year }}</span>
   </div>
 </template>
 
@@ -33,9 +36,17 @@ export default {
       type: String,
       default: ''
     },
+    id: {
+      type: String,
+      default: ''
+    },
     year: {
       type: Number,
       default: 0
+    },
+    type: {
+      type: String,
+      default: ''
     }
   },
   data() {

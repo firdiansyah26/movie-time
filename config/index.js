@@ -1,5 +1,5 @@
 export default {
   endpoints: {
-    titles: '/titles/x'
+    titles: '/titles'
   }
 }
