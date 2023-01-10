@@ -33,8 +33,14 @@ export default {
     '@nuxt/postcss8',
   ],
 
+  // Auth module configuration: https://auth.nuxtjs.org/
+  auth: {
+    plugins: ['@/plugins/service-injector'],
+  },
+
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

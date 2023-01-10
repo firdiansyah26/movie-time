@@ -26,7 +26,7 @@ module.exports = {
         ripple: 'ripple 0.6s linear',
       },
       fontFamily: {
-        sans: ['Proxima Nova', ...defaultTheme.fontFamily.sans],
+        sans: ['Montserrat', ...defaultTheme.fontFamily.sans],
         lato: 'Lato',
       },
     },
@@ -41,6 +41,14 @@ module.exports = {
       transparent: 'transparent',
       current: 'currentColor',
       white: 'white',
+      primary: '#15191e',
+      base: '#292e35',
+      dialog: '#0f1824',
+      custom: {
+        white: '#E5E5E5',
+        orange: '#E74C3C',
+      },
+      secondary: '#929292',
       purple: {
         900: '#211331',
         800: '#2c1941',
