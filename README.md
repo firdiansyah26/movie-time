@@ -4,7 +4,7 @@
 ```bash
 Node Version  : 16.13.1
 NPM Version   : 8.1.2
-Yarn Version  : 3.1.0
+Yarn Version  : 1.22.19
 Language      : Javascript
 Framework     : Nuxt 2 (VueJs)
 Styling       : Tailwind
