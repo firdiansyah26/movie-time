@@ -8,18 +8,19 @@
       </div>
       <div class="flex gap-4">
         <span class="cursor-pointer rounded-full font-semibold px-5 py-1" :class="{
-          'bg-primary': true,
+          'bg-primary': btnActive !== 1,
           'bg-[#E74C3C]': btnActive === 1,
-        }" @click="btnActive = 1">Popularity</span>
+        }" @click="$emit('on-sort', 1)">Popularity</span>
         <span class="cursor-pointer rounded-full font-semibold px-5 py-1" :class="{
-          'bg-primary': true,
+          'bg-primary': btnActive !== 2,
           'bg-[#E74C3C]': btnActive === 2,
-        }" @click="btnActive = 2">Release Date</span>
+        }" @click="$emit('on-sort', 2)">Release Date</span>
       </div>
     </div>
     <div v-if="list.length !== 0" class="grid grid-cols-5 gap-3 p-6 mx-16">
       <div v-for="(data, idx) in list" :key="idx">
-        <comp-card :image="data?.primaryImage?.url" :year="data?.releaseDate?.year" :title="data?.titleText?.text" :type="data?.titleType?.text" :id="data?.id" />
+        <comp-card :image="data?.primaryImage?.url" :year="data?.releaseDate?.year" :title="data?.titleText?.text"
+          :type="data?.titleType?.text" :id="data?.id" />
       </div>
     </div>
   </div>
@@ -38,12 +39,14 @@ export default {
     list: {
       type: Array,
       default: () => ([])
+    },
+    btnActive: {
+      type: Number,
+      default: 1
     }
   },
-  data() {
-    return {
-      btnActive: 1
-    }
+  mounted() {
+
   },
 }
 </script>

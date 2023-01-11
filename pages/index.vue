@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-swiper />
+    <app-swiper :list="upcomingMovieList" />
 
-    <app-list :list="movieList" />
+    <app-list :list="movieList" :btnActive="btnActive" @on-sort="btnActive = $event" />
   </div>
 </template>
 
@@ -18,22 +18,32 @@ export default {
   },
   data() {
     return {
-      movieList: []
+      movieList: [],
+      upcomingMovieList: [],
+      btnActive: 1
     }
   },
-  async mounted() {
-    await this.fetchData();
+  watch: {
+    btnActive() {
+      this.fetchData();
+    }
+  },
+  mounted() {
+    this.fetchData();
   },
   methods: {
     async fetchData() {
       const query = {
         limit: 20,
         page: 1,
-        year: 2020
+        year: 2020,
+        sort: this.btnActive === 1 ? 'year.incr' : 'year.decr'
       }
       const { results } = await this.$services.home.getMovies(query);
-      this.movieList = results.filter((x) => x.primaryImage)
+      const filter = results.filter((x) => x.primaryImage)
 
+      this.movieList = filter
+      this.upcomingMovieList = filter
     }
   }
 }

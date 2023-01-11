@@ -15,6 +15,9 @@ export default (context) => {
     },
     async getDetailMovies(id){
       return homeInstance.$get(`/${id}`);
-    }
+    },
+    async getUpcomingMovies(params){
+      return homeInstance.$get('/x/upcoming', { params });
+    },
   }
 };

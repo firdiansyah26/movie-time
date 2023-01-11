@@ -35,7 +35,7 @@ export default {
 
   // Auth module configuration: https://auth.nuxtjs.org/
   auth: {
-    plugins: ['@/addons/service-injector'],
+    plugins: ['@/plugins/service-injector'],
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
