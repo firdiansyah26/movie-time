@@ -1,5 +1,27 @@
 # movie-time
 
+## Configuration
+```bash
+Node Version  : 16.13.1
+NPM Version   : 8.1.2
+Yarn Version  : 3.1.0
+Language      : Javascript
+Framework     : Nuxt 2 (VueJs)
+Styling       : Tailwind
+Figma         : https://www.figma.com/file/P5Zsn4mk2ES1rwWiyQgmsh/MoovieTime?node-id=24%3A27&t=cDp6Rp3x9LfYjzxQ-0
+Fake API      : https://rapidapi.com/SAdrian/api/moviesdatabase/
+```
+
+## How to Run
+### Running this command in cmd `movie-time`
+```bash
+1. yarn / npm i
+2. yarn dev / npm run dev
+3. Project runing in http:localhost:3000
+```
+### Notes
+_Due to API limitations, not all are integrated into the API (using dummy data)._
+
 ## Build Setup
 
 ```bash
